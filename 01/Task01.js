@@ -1,5 +1,5 @@
 import React from 'react';
-import Timer from './../src/components/Timer';
+import Timer from "./../src/components/containers/TimerContainer";
 
 const Task01 = () => (
     <section>
