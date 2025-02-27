@@ -6,9 +6,9 @@ function StackOverflowSearch() {
   const [sortBy, setSortBy] = useState("creation_date");
 
   const dispatch = useDispatch();
-  const { title } = useSelector((state) => state.fields);
-  const error = useSelector((state) => state.error);
-  const results = useSelector((state) => state.results);
+  const { title } = useSelector((state) => state.stackoverflow.fields);
+  const error = useSelector((state) => state.stackoverflow.error);
+  const results = useSelector((state) => state.stackoverflow.results);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

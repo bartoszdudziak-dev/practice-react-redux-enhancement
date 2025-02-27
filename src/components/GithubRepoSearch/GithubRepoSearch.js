@@ -1,11 +1,11 @@
 import React from "react";
-import { Provider, useDispatch, useSelector } from "react-redux";
-import { store, actions } from "../../modules/github";
+import { useDispatch, useSelector } from "react-redux";
+import { actions } from "../../modules/github";
 
 function GithubRepoSearch() {
-  const { username, query } = useSelector((state) => state.fields);
-  const repos = useSelector((state) => state.repos);
-  const error = useSelector((state) => state.error);
+  const { username, query } = useSelector((state) => state.github.fields);
+  const repos = useSelector((state) => state.github.repos);
+  const error = useSelector((state) => state.github.error);
   const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
