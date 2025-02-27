@@ -19,7 +19,7 @@ function GithubRepoSearch() {
   };
 
   return (
-    <Provider store={store}>
+    <>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
         <input
@@ -33,28 +33,31 @@ function GithubRepoSearch() {
 
       {error && <p>Something went wrong ({error})</p>}
 
-      {repos && (repos.length > 0 ? (
-        <>
-          <div>
-            <label htmlFor="query">Repository Name</label>
-            <input
-              id="query"
-              name="query"
-              value={query}
-              onChange={handleInputChange}
-            />
-          </div>
+      {repos &&
+        (repos.length > 0 ? (
+          <>
+            <div>
+              <label htmlFor="query">Repository Name</label>
+              <input
+                id="query"
+                name="query"
+                value={query}
+                onChange={handleInputChange}
+              />
+            </div>
 
-          <ul>
-            {repos
-              .filter((repo) => repo.name.includes(query))
-              .map((repo) => (
-                <li key={repo.id}>{repo.name}</li>
-              ))}
-          </ul>
-        </>
-      ) : <p>No repos found for that username</p>)}
-    </Provider>
+            <ul>
+              {repos
+                .filter((repo) => repo.name.includes(query))
+                .map((repo) => (
+                  <li key={repo.id}>{repo.name}</li>
+                ))}
+            </ul>
+          </>
+        ) : (
+          <p>No repos found for that username</p>
+        ))}
+    </>
   );
 }
 

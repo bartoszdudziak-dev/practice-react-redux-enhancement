@@ -12,7 +12,7 @@ const App = () => {
       <>
         <Task01 />
         {/* <Task02 /> */}
-        <Task03 />
+        {/* <Task03 /> */}
         <Task04 />
         <Task05 />
       </>
